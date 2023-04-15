@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Nabvar from './components/Nabvar'
+import News from './components/News'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
-function App() {
+export default function App() {
+  const [currState,changeState] = useState({
+    pageSize: 6,
+    country: 'in',
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+       
+      {/* <News key="" pageSize={currState.pageSize} country={'in'} category={'sports'}/> */}
+      <BrowserRouter>
+      <Nabvar /> 
+        <Routes>
+          {/* <Route path="/" element={<Nabvar />} /> */}
+          <Route path="/" element={<News key="1" pageSize={currState.pageSize} country={currState.country} category={'general'} />} />
+          <Route path="/business" element={<News key="2" pageSize={currState.pageSize} country={currState.country} category={'business'} />} />
+          <Route path="/entertainment" element={<News key="3" pageSize={currState.pageSize} country={currState.country} category={'entertainment'} />} />
+          <Route path="/health" element={<News key="4" pageSize={currState.pageSize} country={currState.country} category={'health'} />} />
+          <Route path="/science" element={<News key="5" pageSize={currState.pageSize} country={currState.country} category={'science'} />} />
+          <Route path="/sports" element={<News key="6" pageSize={currState.pageSize} country={currState.country} category={'sports'} />} />
+          <Route path="/technology" element={<News key="7" pageSize={currState.pageSize} country={currState.country} category={'technology'} />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  )
 }
-
-export default App;
