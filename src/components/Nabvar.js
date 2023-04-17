@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {BrowserRouter, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 export class Nabvar extends Component {
 
@@ -17,12 +17,6 @@ export class Nabvar extends Component {
                   <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
                       <Link className='nav-link'  to="/">Home</Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className='nav-link'  to="/about">About</Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link className='nav-link'  to="/Us">Us</Link>
                     </li>
                     <li className='nav-item'>
                     <Link className='nav-link'  to="/business">Business</Link>

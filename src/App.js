@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 
 export default function App() {
-  const [currState,changeState] = useState({
+  const [currState] = useState({
     pageSize: 6,
     country: 'in',
   })
@@ -17,7 +17,7 @@ export default function App() {
        
       {/* <News key="" pageSize={currState.pageSize} country={'in'} category={'sports'}/> */}
       <BrowserRouter>
-      <Nabvar /> 
+        <Nabvar /> 
         <Routes>
           {/* <Route path="/" element={<Nabvar />} /> */}
           <Route path="/" element={<News key="1" pageSize={currState.pageSize} country={currState.country} category={'general'} />} />
