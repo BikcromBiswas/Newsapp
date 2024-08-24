@@ -51,10 +51,9 @@ export default function News(props) {
     <div>
       return (
       <>
-     
       <div className='container my-5'>
-          <h2 className='text-center' >Top Headlines on {props.category[0].toUpperCase()+props.category.slice(1)}</h2>
-          {currState.loading && <Loader />}
+          <h2 className='text-center text-red-200' >Top Headlines from <span className='text-red-400'>{props.category[0].toUpperCase()+props.category.slice(1)}</span> Category</h2>
+          {/* {currState.loading && <Loader />} */}
           <div className="row my-5 justify-content-center">
             {
               currState.articles?.map((obj, i) => {

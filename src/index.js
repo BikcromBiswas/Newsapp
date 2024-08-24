@@ -7,5 +7,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-console.log(process.env);
-console.log("Hello");
